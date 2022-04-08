@@ -1,11 +1,27 @@
-.header{
+main-wrap {
+    position: relative;
+}
+#header{
 font-weight: bold;
 font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-size: 50px;
 }
+#input {
+    margin: 10px;
+    width: 300px;
+}
 .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-weight: bold;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
     text-align: right;
-    }
+}
+#ing-cont {
+    height: 331px;
+}
+.btn {
+    margin: 0 10px;
+}
