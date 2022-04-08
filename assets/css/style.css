@@ -1,11 +1,31 @@
-.header{
-font-weight: bold;
-font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-size: 50px;
-}
-.footer{
+.header {
     font-weight: bold;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+
+.footer {
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
     text-align: right;
-    }
+}
+
+/* footer jank code */
+
+/* #page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+    /* Footer height */
+/* }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    /* Footer height }
