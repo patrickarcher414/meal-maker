@@ -19,6 +19,12 @@ font-size: 50px;
     font-size: 50px;
     text-align: right;
 }
+#recipes {
+    height: 725px;
+}
+#footer-two {
+    text-align: left;
+}
 #ing-cont {
     height: 331px;
 }
