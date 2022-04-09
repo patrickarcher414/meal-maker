@@ -1,4 +1,3 @@
-
 var spoonKey = '129215e0949b4e2284c679c5b3665666'
 var form = document.querySelector('form')
 var addIng = document.querySelector('[name="ingredients"]')
@@ -63,6 +62,7 @@ function createLiElement() {
     listItemEl.setAttribute("id", input.value)
     listContUlEl.appendChild(listItemEl)
 }
+
 function createLiElement() {
     var listItemEl = document.createElement('li')
     listItemEl.innerText = input.value
