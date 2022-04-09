@@ -4,20 +4,6 @@ var addIng = document.querySelector('[name="ingredients"]')
 var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
-<<<<<<< HEAD
-function displayList() {
-    var savedIng = localStorage.getItem('ingredients')
-    var displayIng = JSON.parse(savedIng)
-    //add savedIng items to ingList array
-    console.log(displayIng)
-    // ingList.push(displayIng)
-    for (var i = 0; i < displayIng.length; i++) {
-        //add one array item from savedIng into the ingList variable array
-        ingList.push(displayIng[i])
-        var listItemEl = document.createElement('li')
-        listItemEl.innerHTML = ingList[i]
-        // listItemEl.innerText.str.replace()
-=======
 // the following variable is part of moving us to the Meals.HTML
 //but is not currently working needs to be fixed.
 // var seeListBtn = document.getElementById('see-list-btn')
@@ -44,47 +30,20 @@ function displayList() {
 
         var listItemEl = document.createElement('li')
         listItemEl.innerText = ingList[i]
->>>>>>> main
         listItemEl.setAttribute("id", ingList[i])
         listContUlEl.appendChild(listItemEl)
     }
 }
-<<<<<<< HEAD
-=======
 
 
 // begins the primary functionality and logic of Meal Maker
 
->>>>>>> main
 function addIngredient() {
     if (input.value !== '') {
         //add the input.value as an array item to ingList variable
         ingList.push(JSON.stringify(input.value))
         console.log(ingList)
         localStorage.setItem('ingredients', JSON.stringify(ingList))
-<<<<<<< HEAD
-        //create a Li element
-        // make the innerText the input.value
-        // give the Li a unique ID
-        // give the Li a button el
-        //give the Li Btn element a event listener
-        //append the Btn to the Li
-        //append the Li to the list-cont Ul
-        createLiElement(input.value)
-    } else {
-        console.log('not a valid ingredient')
-    }
-    // var savedIng = localStorage.getItem('ingredients')
-    // var displayIng = JSON.parse(savedIng)
-    // console.log(displayIng + " this is pulled from local storage")
-    // for (var i = 0; i < displayIng.length; i++) {
-    //     var createLi = document.createElement('li')
-    //     createLi.innerText = displayIng[i].ingredient
-    //     listContUlEl.appendChild(createLi)
-    // }
-}
-function createLiElement() {
-=======
 
         // creates a Li element and passes through the ingredient
         createLiElement(input.value)
@@ -98,23 +57,14 @@ function createLiElement() {
     // create Li element, set inner text to what the user typed in for
     //an ingredient, sets a unique ID to the li, and lastly appends
     //the li element to the ul element in the HTML
->>>>>>> main
     var listItemEl = document.createElement('li')
     listItemEl.innerText = input.value
     listItemEl.setAttribute("id", input.value)
     listContUlEl.appendChild(listItemEl)
 }
+
 function handleSubmit(ev) {
     ev.preventDefault()
-<<<<<<< HEAD
-    console.log(input.value + " this is the value that was typed into the input box")
-    addIngredient(input.value)
-}
-
-function redirect() {
-    window.location.assign()('file:///Users/mainfolder/Desktop/desktop-items/projects/project-one/meals.html');
-}
-=======
     //sends the input value of what the user typed in as the paramenter
     //to the addIngredient function
     addIngredient(input.value)
@@ -139,7 +89,6 @@ makeMealBtn.addEventListener('click', redirectToMealsHTML);
 
 //this call is not being used right now but could. See earlier comment for details.
 // displayList()
->>>>>>> main
 
 makeMealBtn.addEventListener('click', redirect);
 
