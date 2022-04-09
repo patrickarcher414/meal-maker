@@ -11,40 +11,27 @@
 </head>
 
 <body>
-    <header class="head-container row">
-        <div class="header col s12 center-align red lighten-2" id="header-container">
-            <h1>MEAL MAKER</h1>
+
+    <div class="row">
+        <div id="header" class="header col s12 center-align pink lighten-3">
+            <header>MEAL MAKER</header>
         </div>
-    </header>
-
-
-    <div class="main-container col s12 center-align" id="main-container">
+    </div>
+    <div id="main-wrap" class="col s12 center-align">
         <main>
-            <input type="text" name="ingredients" placeholder="Enter Ingredients" />
-            <button class="btn amber accent-1" id="make-meal-btn" type="submit">MAKE MEAL</button>
+            <form id="form">
+                <input id="input" type="text" name="ingredients" placeholder="Enter Ingredients" />
+                <button id="add-ingr-btn" class="btn black-text teal accent-4 z-depth-2" type="submit">ADD</button>
+            </form>
+            <div id="list-cont"></div>
+            <footer id="footer-container" class="footer col s12 pink lighten-3">
+                <button id="make-meal-btn" class="btn black-text teal accent-4 z-depth-2" type="submit">MAKE
+                    MEAL</button>
+            </footer>
         </main>
-
-        <div class="ingredient-container" id="ingredient-container">
-        </div>
-
-
     </div>
 
-    <!-- <div class="footer">
-        <footer class="page-footer col s12 red lighten-2" id="footer-container">
-
-            <button class="btn amber accent-1" id="see-recipe-btn" type="submit">SEE RECIPE</button>
-
-        </footer>
-    </div> -->
-
-    <!-- <div id="page-container">
-        <div id="content-wrap">
-            <button class="btn amber accent-1" id="see-recipe-btn" type="submit">SEE RECIPE</button>
-        </div>
-        <footer id="footer"></footer>
-    </div> -->
-
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
