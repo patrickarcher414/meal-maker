@@ -18,11 +18,10 @@ function displayList() {
     for (var i = 0; i < displayIng.length; i++) {
 
         //add one array item from savedIng into the ingList variable array
-        ingList.push(displayIng[i])
+        ingList.push(displayIng[i].replaceAll('"', ''))
 
         var listItemEl = document.createElement('li')
-        listItemEl.innerHTML = ingList[i]
-        // listItemEl.innerText.str.replace()
+        listItemEl.innerText = ingList[i]
         listItemEl.setAttribute("id", ingList[i])
         listContUlEl.appendChild(listItemEl)
     }
