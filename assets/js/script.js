@@ -4,7 +4,13 @@ var form = document.querySelector('form')
 var addIng = document.querySelector('[name="ingredients"]')
 var ingList = []
 var listContUlEl = document.getElementById('list-cont')
+var makeMealBtn = document.getElementById('make-meal-btn')
 
+
+// the displayList pulls ingredients from localStorage and 
+//renders them as list items on the browser with unique IDs
+//this is not currently being used but could be in the future
+//if we want the option of saving ingredients for later.
 function displayList() {
     var savedIng = localStorage.getItem('ingredients')
     var displayIng = JSON.parse(savedIng)
@@ -27,6 +33,10 @@ function displayList() {
     }
 }
 
+
+
+// begins the primary functionality and logic of Meal Maker
+
 function addIngredient() {
     if (input.value !== '') {
         //add the input.value as an array item to ingList variable
@@ -34,47 +44,43 @@ function addIngredient() {
         console.log(ingList)
         localStorage.setItem('ingredients', JSON.stringify(ingList))
 
-        //create a Li element
-        // make the innerText the input.value
-        // give the Li a unique ID
-        // give the Li a button el
-        //give the Li Btn element a event listener
-        //append the Btn to the Li
-        //append the Li to the list-cont Ul
-
+        // creates a Li element and passes through the ingredient
         createLiElement(input.value)
 
     } else {
         console.log('not a valid ingredient')
     }
-
-    // var savedIng = localStorage.getItem('ingredients')
-    // var displayIng = JSON.parse(savedIng)
-    // console.log(displayIng + " this is pulled from local storage")
-
-    // for (var i = 0; i < displayIng.length; i++) {
-    //     var createLi = document.createElement('li')
-    //     createLi.innerText = displayIng[i].ingredient
-    //     listContUlEl.appendChild(createLi)
-    // }
 }
 
 function createLiElement() {
+    // create Li element, set inner text to what the user typed in for
+    //an ingredient, sets a unique ID to the li, and lastly appends
+    //the li element to the ul element in the HTML
     var listItemEl = document.createElement('li')
     listItemEl.innerText = input.value
     listItemEl.setAttribute("id", input.value)
     listContUlEl.appendChild(listItemEl)
 }
 
-
 function handleSubmit(ev) {
     ev.preventDefault()
-    console.log(input.value + " this is the value that was typed into the input box")
+    //sends the input value of what the user typed in as the paramenter
+    //to the addIngredient function
     addIngredient(input.value)
 }
 
-form.addEventListener('submit', handleSubmit)
+function redirectToMealsHTML() {
+    location.assign("./meals.html");
+}
 
-displayList()
+makeMealBtn.addEventListener('click', redirectToMealsHTML);
+
+form.addEventListener('submit', handleSubmit);
+
+
+
+
+
+// displayList()
 
 
