@@ -1,33 +1,46 @@
 main-wrap {
     position: relative;
 }
-#header{
-font-weight: bold;
-font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-size: 50px;
+
+#header {
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
 }
+
 #input {
     margin: 10px;
     width: 300px;
 }
-.footer{
+
+.footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     font-weight: bold;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+
+.footer {
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 50px;
     text-align: right;
 }
+
 #recipes {
     height: 725px;
 }
+
 #footer-two {
     text-align: left;
 }
+
 #list-cont {
     height: 331px;
 }
+
 .btn {
     margin: 0 10px;
 }
