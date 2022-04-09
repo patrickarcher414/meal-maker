@@ -10,23 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <div class="head-container row">
-    <div class="header col s12 center-align red lighten-2" id="header-container">
-    <header>MEAL MAKER</header>
-     </div>
+    <div class="container">
+        <div class="head-container row">
+            <div class="header col s12 center-align red lighten-2" id="header-container">
+            <header>MEAL MAKER</header>
+             </div>
+            </div>
+             <div class="main-container col s12 center-align" id="main-container">
+                 <main>
+                    <input type="text" name="ingredients" placeholder="Enter Ingredients" />
+                    <button class="btn amber accent-1" id="make-meal-btn" type="submit">MAKE MEAL</button>
+                 </main>
+                 <div class="ingredient-container" id="ingredient-container">
+                     
+                 </div>
+                 <div class="page-footer">
+                    <footer class="footer col s12 red lighten-2 " id="footer-container">
+                        <button class="btn amber accent-1" id="make-meal-btn" type="submit">MAKE MEAL</button>
+                    </footer>
+                     
+                 </div>
+                 
+                
+             </div>
     </div>
-     <div class="main-container col s12 center-align" id="main-container">
-         <main>
-            <input type="text" name="ingredients" placeholder="Enter Ingredients" />
-            <button class="btn amber accent-1" id="make-meal-btn" type="submit">MAKE MEAL</button>
-         </main>
-         <div class="ingredient-container" id="ingredient-container">
-             
-         </div>
-         <footer class="footer col s12 red lighten-2" id="footer-container">
-            <button class="btn amber accent-1" id="make-meal-btn" type="submit">MAKE MEAL</button>
-        </footer>
-     </div>
+    
      
 
 </body>
