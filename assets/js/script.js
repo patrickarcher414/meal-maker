@@ -5,6 +5,9 @@ var addIng = document.querySelector('[name="ingredients"]')
 var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
+// the following variable is part of moving us to the Meals.HTML
+//but is not currently working needs to be fixed.
+// var seeListBtn = document.getElementById('see-list-btn')
 
 
 // the displayList pulls ingredients from localStorage and 
@@ -32,7 +35,6 @@ function displayList() {
         listContUlEl.appendChild(listItemEl)
     }
 }
-
 
 
 // begins the primary functionality and logic of Meal Maker
@@ -69,18 +71,24 @@ function handleSubmit(ev) {
     addIngredient(input.value)
 }
 
-function redirectToMealsHTML() {
-    location.assign("./meals.html");
-}
-
-makeMealBtn.addEventListener('click', redirectToMealsHTML);
-
 form.addEventListener('submit', handleSubmit);
 
 
+//this function moves browser to the Meals.HTML
+function redirectToMealsHTML() {
+    location.assign("./meals.html");
+}
+makeMealBtn.addEventListener('click', redirectToMealsHTML);
 
 
+//This is broken we need to make it work
+// function redirectToIngredientsListHTML() {
+//     location.assign("./index.html");
+// }
+// seeListBtn.addEventListener('click', redirectToIngredientsListHTML);
 
+
+//this call is not being used right now but could. See earlier comment for details.
 // displayList()
 
 
