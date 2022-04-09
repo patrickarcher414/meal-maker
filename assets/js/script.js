@@ -8,10 +8,23 @@ var listContUlEl = document.getElementById('list-cont')
 function displayList() {
     var savedIng = localStorage.getItem('ingredients')
     var displayIng = JSON.parse(savedIng)
+
+    //add savedIng items to ingList array
+
+    console.log(displayIng)
+    // ingList.push(displayIng)
+
+
     for (var i = 0; i < displayIng.length; i++) {
-        var createLi = document.createElement('li')
-        createLi.innerText = displayIng[i].ingredient
-        createUl.appendChild(createLi)
+
+        //add one array item from savedIng into the ingList variable array
+        ingList.push(displayIng[i])
+
+        var listItemEl = document.createElement('li')
+        listItemEl.innerHTML = ingList[i]
+        // listItemEl.innerText.str.replace()
+        listItemEl.setAttribute("id", ingList[i])
+        listContUlEl.appendChild(listItemEl)
     }
 }
 
@@ -63,6 +76,6 @@ function handleSubmit(ev) {
 
 form.addEventListener('submit', handleSubmit)
 
-// displayList()
+displayList()
 
 
