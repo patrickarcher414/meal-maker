@@ -68,6 +68,7 @@ function handleSubmit(ev) {
     //sends the input value of what the user typed in as the paramenter
     //to the addIngredient function
     addIngredient(input.value)
+    input.value = ""
 }
 
 form.addEventListener('submit', handleSubmit);
