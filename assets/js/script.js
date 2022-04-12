@@ -8,24 +8,24 @@ var makeMealBtn = document.getElementById('make-meal-btn')
 // fetch requests to the API Spoonacular and Edamam
 // need to add a variable to the value of ingredients parameter that's equal to savedIng
 function getSpoonData() {
-    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +  + '&ranking=1&ignorePantry=true') 
-        then(function(response) {
+    fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + '&ranking=1&ignorePantry=true')
+        .then(function (response) {
             response.JSON
         })
-        then(function(data) {
+        .then(function (data) {
             console.log(data)
         })
 }
 
 
 function getEdamamData() {
-    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + ) 
-        then(function(response) { 
-            response.JSON
-        })
-        then(function(data) {
-            console.log(data)
-        })
+    fetch('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + 'hello')
+    then(function (response) {
+        response.JSON
+    })
+    then(function (data) {
+        console.log(data)
+    })
 }
 
 
