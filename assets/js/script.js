@@ -4,9 +4,29 @@ var addIng = document.querySelector('[name="ingredients"]')
 var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
-// the following variable is part of moving us to the Meals.HTML
-//but is not currently working needs to be fixed.
-// var seeListBtn = document.getElementById('see-list-btn')
+
+// fetch requests to the API Spoonacular and Edamam
+// need to add a variable to the value of ingredients parameter that's equal to savedIng
+function getSpoonData() {
+    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +  + '&ranking=1&ignorePantry=true') 
+        then(function(response) {
+            response.JSON
+        })
+        then(function(data) {
+            console.log(data)
+        })
+}
+
+
+function getEdamamData() {
+    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + ) 
+        then(function(response) { 
+            response.JSON
+        })
+        then(function(data) {
+            console.log(data)
+        })
+}
 
 
 // the displayList pulls ingredients from localStorage and 
@@ -18,10 +38,7 @@ function displayList() {
     var displayIng = JSON.parse(savedIng)
 
     //add savedIng items to ingList array
-
-    console.log(displayIng)
     // ingList.push(displayIng)
-
 
     for (var i = 0; i < displayIng.length; i++) {
 
@@ -34,7 +51,6 @@ function displayList() {
         listContUlEl.appendChild(listItemEl)
     }
 }
-
 
 // begins the primary functionality and logic of Meal Maker
 
@@ -63,24 +79,19 @@ function createLiElement() {
     listContUlEl.appendChild(listItemEl)
 }
 
-function createLiElement() {
-    var listItemEl = document.createElement('li')
-    listItemEl.innerText = input.value
-    listItemEl.setAttribute("id", input.value)
-    listContUlEl.appendChild(listItemEl)
+function handleSubmit(ev) {
+    ev.preventDefault()
+    //sends the input value of what the user typed in as the paramenter
+    //to the addIngredient function
+    addIngredient(input.value)
+    input.value = ""
 }
-
 form.addEventListener('submit', handleSubmit);
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
-    location.assign("./meals.html");
+    location.assign('./meals.html')
 }
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
-//This is broken we need to make it work
-// function redirectToIngredientsListHTML() {
-//     location.assign("./index.html");
-// }
-// seeListBtn.addEventListener('click', redirectToIngredientsListHTML);
 //this call is not being used right now but could. See earlier comment for details.
 // displayList()
 
