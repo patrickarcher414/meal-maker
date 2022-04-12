@@ -70,35 +70,17 @@ function createLiElement() {
     listContUlEl.appendChild(listItemEl)
 }
 
-function redirect() {
-    window.location.assign()('./');
-}
-makeMealBtn.addEventListener('click', redirect);
-
-function handleSubmit(ev) {
-    ev.preventDefault()
-    //sends the input value of what the user typed in as the paramenter
-    //to the addIngredient function
-    addIngredient(input.value)
-}
-
 form.addEventListener('submit', handleSubmit);
-
-
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
     location.assign("./meals.html");
 }
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
-
-
 //This is broken we need to make it work
 // function redirectToIngredientsListHTML() {
 //     location.assign("./index.html");
 // }
 // seeListBtn.addEventListener('click', redirectToIngredientsListHTML);
-
-
 //this call is not being used right now but could. See earlier comment for details.
 // displayList()
 
