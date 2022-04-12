@@ -5,6 +5,30 @@ var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
 
+// fetch requests to the API Spoonacular and Edamam
+// need to add a variable to the value of ingredients parameter that's equal to savedIng
+function getSpoonData() {
+    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +  + '&ranking=1&ignorePantry=true') 
+        then(function(response) {
+            response.JSON
+        })
+        then(function(data) {
+            console.log(data)
+        })
+}
+
+
+function getEdamamData() {
+    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + ) 
+        then(function(response) { 
+            response.JSON
+        })
+        then(function(data) {
+            console.log(data)
+        })
+}
+
+
 // the displayList pulls ingredients from localStorage and 
 //renders them as list items on the browser with unique IDs
 //this is not currently being used but could be in the future
@@ -14,10 +38,7 @@ function displayList() {
     var displayIng = JSON.parse(savedIng)
 
     //add savedIng items to ingList array
-
-    console.log(displayIng)
     // ingList.push(displayIng)
-
 
     for (var i = 0; i < displayIng.length; i++) {
 
@@ -30,7 +51,6 @@ function displayList() {
         listContUlEl.appendChild(listItemEl)
     }
 }
-
 
 // begins the primary functionality and logic of Meal Maker
 
@@ -67,7 +87,6 @@ function handleSubmit(ev) {
     input.value = ""
 }
 form.addEventListener('submit', handleSubmit);
-
 
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
