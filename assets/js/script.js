@@ -72,7 +72,6 @@ function clearLocalEventHandler() {
 }
 
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
-
 clearLocalBtn.addEventListener('click', clearLocalEventHandler);
 
 //this call is not being used right now but could. See earlier comment for details.
