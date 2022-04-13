@@ -5,29 +5,6 @@ var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
 
-// fetch requests to the API Spoonacular and Edamam
-// need to add a variable to the value of ingredients parameter that's equal to savedIng
-function getSpoonData() {
-    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +  + '&ranking=1&ignorePantry=true') 
-        then(function(response) {
-            response.JSON
-        })
-        then(function(data) {
-            console.log(data)
-        })
-}
-
-
-function getEdamamData() {
-    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + '')
-        then(function(response) { 
-            response.JSON
-        })
-        then(function(data) {
-            console.log(data)
-        })
-}
-
 
 // the displayList pulls ingredients from localStorage and 
 //renders them as list items on the browser with unique IDs
@@ -35,17 +12,18 @@ function getEdamamData() {
 //if we want the option of saving ingredients for later.
 function displayList() {
     var savedIng = localStorage.getItem('ingredients')
-    var displayIng = JSON.parse(savedIng)
-
+    var displayIng = JSON.parse(savedIng) || []
+    console.log(displayIng)
     //add savedIng items to ingList array
     // ingList.push(displayIng)
 
     for (var i = 0; i < displayIng.length; i++) {
 
+      
 
         var listItemEl = document.createElement('li')
-        listItemEl.innerText = displayIngList[i]
-        listItemEl.setAttribute("id", displayIngList[i])
+        listItemEl.innerText = displayIng[i]
+        listItemEl.setAttribute("id", displayIng[i])
         listContUlEl.appendChild(listItemEl)
     }
 }
@@ -56,10 +34,9 @@ function addIngredient() {
     if (input.value !== '') {
         //add the input.value as an array item to ingList variable
         var savedIng = localStorage.getItem('ingredients')
-        var displayIng = JSON.parse(savedIng)
+        var displayIng = JSON.parse(savedIng) || []
         displayIng.push(input.value)
-        console.log(ingList)
-        localStorage.setItem('ingredients', JSON.stringify(ingList))
+        localStorage.setItem('ingredients', JSON.stringify(displayIng))
 
         // creates a Li element and passes through the ingredient
         createLiElement(input.value)
@@ -93,6 +70,6 @@ function redirectToMealsHTML() {
 }
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
 //this call is not being used right now but could. See earlier comment for details.
-// displayList()
+displayList()
 
 
