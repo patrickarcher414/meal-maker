@@ -91,6 +91,8 @@ form.addEventListener('submit', handleSubmit);
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
     location.assign('./meals.html')
+    getSpoonData()
+    getEdamamData()
 }
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
 
