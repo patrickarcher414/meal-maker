@@ -1,49 +1,37 @@
-var spoonKey = '129215e0949b4e2284c679c5b3665666'
+
 var form = document.querySelector('form')
 var addIng = document.querySelector('[name="ingredients"]')
-var ingList = []
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
-// the following variable is part of moving us to the Meals.HTML
-//but is not currently working needs to be fixed.
-// var seeListBtn = document.getElementById('see-list-btn')
-
+var clearLocalBtn = document.getElementById('clear-local-btn')
 
 // the displayList pulls ingredients from localStorage and 
 //renders them as list items on the browser with unique IDs
-//this is not currently being used but could be in the future
-//if we want the option of saving ingredients for later.
 function displayList() {
     var savedIng = localStorage.getItem('ingredients')
-    var displayIng = JSON.parse(savedIng)
-
-    //add savedIng items to ingList array
-
+    var displayIng = JSON.parse(savedIng) || []
     console.log(displayIng)
+    //add savedIng items to ingList array
     // ingList.push(displayIng)
-
 
     for (var i = 0; i < displayIng.length; i++) {
 
-        //add one array item from savedIng into the ingList variable array
-        ingList.push(displayIng[i].replaceAll('"', ''))
-
         var listItemEl = document.createElement('li')
-        listItemEl.innerText = ingList[i]
-        listItemEl.setAttribute("id", ingList[i])
+        listItemEl.innerText = displayIng[i]
+        listItemEl.setAttribute("id", displayIng[i])
         listContUlEl.appendChild(listItemEl)
     }
 }
-
 
 // begins the primary functionality and logic of Meal Maker
 
 function addIngredient() {
     if (input.value !== '') {
         //add the input.value as an array item to ingList variable
-        ingList.push(JSON.stringify(input.value))
-        console.log(ingList)
-        localStorage.setItem('ingredients', JSON.stringify(ingList))
+        var savedIng = localStorage.getItem('ingredients')
+        var displayIng = JSON.parse(savedIng) || []
+        displayIng.push(input.value)
+        localStorage.setItem('ingredients', JSON.stringify(displayIng))
 
         // creates a Li element and passes through the ingredient
         createLiElement(input.value)
@@ -68,26 +56,27 @@ function handleSubmit(ev) {
     //sends the input value of what the user typed in as the paramenter
     //to the addIngredient function
     addIngredient(input.value)
+    input.value = ""
 }
-
 form.addEventListener('submit', handleSubmit);
+
 
 
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
-    location.assign("./meals.html");
+    location.assign('./meals.html')
 }
+
+function clearLocalEventHandler() {
+    localStorage.clear();
+    location.reload();
+
+}
+
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
-
-
-//This is broken we need to make it work
-// function redirectToIngredientsListHTML() {
-//     location.assign("./index.html");
-// }
-// seeListBtn.addEventListener('click', redirectToIngredientsListHTML);
-
+clearLocalBtn.addEventListener('click', clearLocalEventHandler);
 
 //this call is not being used right now but could. See earlier comment for details.
-// displayList()
+displayList()
 
 
