@@ -10,7 +10,7 @@ var ingredients = JSON.parse(savedIng) || []
 function getSpoonData() {
     fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&apiKey=' + spoonKey ) 
         .then(function(response) {
-            return response.JSON
+            return response.json()
         })
         .then(function(data) {
             console.log(data)
