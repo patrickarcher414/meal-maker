@@ -26,13 +26,5 @@ function getEdamamData() {
         })
 }
 
-
-
-
-
-
-
-//this call is not being used right now but could. See earlier comment for details.
-// displayList()
-
-
+// getSpoonData()
+// getEdamamData()
