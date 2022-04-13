@@ -21,6 +21,7 @@ function displayRecipes(data) {
 // need to add a variable to the value of ingredients parameter that's equal to savedIng
 function getSpoonData() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true') 
         .then(function(response) {
 <<<<<<< HEAD
@@ -44,52 +45,34 @@ function getEdamamData() {
         })
 =======
 <<<<<<< HEAD
+=======
+
+>>>>>>> 7bfc9e5fe960c3861afc516cd88596a3575b1fa3
     fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&number=' + maxRecipe + '&apiKey=' + spoonKey ) 
         .then(function(response) {
-=======
-    fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&apiKey=' + spoonKey)
-        .then(function (response) {
-            console.log(response)
->>>>>>> b84a0e72a33e53570c28e49338c26d5b0e5b62cf
             return response.json()
         })
         .then(function (data) {
             console.log(data)
             displayRecipes(data)
         })      
->>>>>>> de4e53cd26ed517e9cf7ba2b01166e6a6bd9cdeb
 }
 
 
 function getEdamamData() {
-<<<<<<< HEAD
-    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=') 
-        .then(function(response) { 
-            response.JSON
-        })
-        .then(function(data) {
-=======
+
+
     fetch('https://api.edamam.com/api/recipes/v2?q=' + ingredients.join(',') + '&app_id=' + + '&app_key=')
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
->>>>>>> de4e53cd26ed517e9cf7ba2b01166e6a6bd9cdeb
             console.log(data)
         })
 }
 
-<<<<<<< HEAD
 
-
-
-
-
-
-//this call is not being used right now but could. See earlier comment for details.
-// displayList()
-=======
 getSpoonData()
->>>>>>> de4e53cd26ed517e9cf7ba2b01166e6a6bd9cdeb
+
 
 
