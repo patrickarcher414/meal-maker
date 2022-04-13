@@ -3,6 +3,7 @@ var form = document.querySelector('form')
 var addIng = document.querySelector('[name="ingredients"]')
 var listContUlEl = document.getElementById('list-cont')
 var makeMealBtn = document.getElementById('make-meal-btn')
+var clearLocalBtn = document.getElementById('clear-local-btn')
 
 // the displayList pulls ingredients from localStorage and 
 //renders them as list items on the browser with unique IDs
@@ -59,11 +60,21 @@ function handleSubmit(ev) {
 }
 form.addEventListener('submit', handleSubmit);
 
+
+
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
     location.assign('./meals.html')
 }
+
+function clearLocalEventHandler() {
+    localStorage.clear();
+    location.reload();
+
+}
+
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
+clearLocalBtn.addEventListener('click', clearLocalEventHandler);
 
 //this call is not being used right now but could. See earlier comment for details.
 displayList()
