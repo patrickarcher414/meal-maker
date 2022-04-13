@@ -8,10 +8,19 @@ var ingredients = JSON.parse(savedIng) || []
 var recipes = document.querySelector('.meal')
 
 
-function displayRecipes(data) {
+
+function displaySpoonRecipes(data) {
     for (var i=0; i < ingredients.length; i++ ) {
         var listItem = document.createElement('li')
         listItem.innerText = data[i].title
+        recipes.appendChild(listItem)
+    }
+}
+
+function displayEdamamRecipes(data) {
+    for (var i=0; i < 5; i++ ) {
+        var listItem = document.createElement('li')
+        listItem.innerText = data.hits[i].recipe.label
         recipes.appendChild(listItem)
     }
 }
@@ -21,13 +30,13 @@ function displayRecipes(data) {
 // need to add a variable to the value of ingredients parameter that's equal to savedIng
 function getSpoonData() {
 
-    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&number=' + maxRecipe + '&apiKey=' + spoonKey ) 
+    fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&number=5&apiKey=' + spoonKey ) 
         .then(function(response) {
             return response.json()
         })
         .then(function (data) {
             console.log(data)
-            displayRecipes(data)
+            displaySpoonRecipes(data)
         })      
 }
 
@@ -35,17 +44,18 @@ function getSpoonData() {
 function getEdamamData() {
 
 
-    fetch('https://api.edamam.com/api/recipes/v2?q=' + ingredients.join(',') + '&app_id=' + + '&app_key=')
+    fetch('https://api.edamam.com/api/recipes/v2?type=public&q=' + ingredients.join(',') + '&app_id=' + edamamId + '&app_key=' + edamamKey)
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
             console.log(data)
+            displayEdamamRecipes(data)
         })
 }
 
 
 getSpoonData()
-
+getEdamamData()
 
 
