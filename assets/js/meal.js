@@ -1,4 +1,3 @@
-
 var edamamKey = 'ad1b23b5a41114ae64b13d36bb2dceda'
 var edamamId = '62eb7f7d'
 var spoonKey = '129215e0949b4e2284c679c5b3665666'
@@ -11,8 +10,11 @@ var recipes = document.querySelector('.meal')
 function displayRecipes(data) {
     for (var i = 0; i < ingredients.length; i++) {
         var listItem = document.createElement('li')
+        var imgItem = document.createElement('img')
         listItem.innerText = data[i].title
+        imgItem.setAttribute('src', data[i].image.innerText)
         recipes.appendChild(listItem)
+        listItem.appendChild(imgItem)
     }
 }
 

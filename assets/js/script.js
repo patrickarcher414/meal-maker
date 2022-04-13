@@ -1,4 +1,3 @@
-
 var form = document.querySelector('form')
 var addIng = document.querySelector('[name="ingredients"]')
 var listContUlEl = document.getElementById('list-cont')
