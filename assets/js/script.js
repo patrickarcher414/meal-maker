@@ -19,7 +19,7 @@ function getSpoonData() {
 
 
 function getEdamamData() {
-    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + ) 
+    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + '')
         then(function(response) { 
             response.JSON
         })
@@ -42,12 +42,10 @@ function displayList() {
 
     for (var i = 0; i < displayIng.length; i++) {
 
-        //add one array item from savedIng into the ingList variable array
-        ingList.push(displayIng[i].replaceAll('"', ''))
 
         var listItemEl = document.createElement('li')
-        listItemEl.innerText = ingList[i]
-        listItemEl.setAttribute("id", ingList[i])
+        listItemEl.innerText = displayIngList[i]
+        listItemEl.setAttribute("id", displayIngList[i])
         listContUlEl.appendChild(listItemEl)
     }
 }
@@ -57,7 +55,9 @@ function displayList() {
 function addIngredient() {
     if (input.value !== '') {
         //add the input.value as an array item to ingList variable
-        ingList.push(JSON.stringify(input.value))
+        var savedIng = localStorage.getItem('ingredients')
+        var displayIng = JSON.parse(savedIng)
+        displayIng.push(input.value)
         console.log(ingList)
         localStorage.setItem('ingredients', JSON.stringify(ingList))
 
