@@ -1,5 +1,6 @@
 var spoonKey = '129215e0949b4e2284c679c5b3665666'
-
+var edamamKey = 'ad1b23b5a41114ae64b13d36bb2dceda'
+var edamamId = '62eb7f7d'
 var savedIng = localStorage.getItem('ingredients')
 var ingredients = JSON.parse(savedIng) || []
 
