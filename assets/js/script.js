@@ -59,12 +59,9 @@ function handleSubmit(ev) {
     input.value = ""
 }
 form.addEventListener('submit', handleSubmit);
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 745f56d630e51bc720bc297ebbe1adbdbbeb9e56
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
     location.assign('./meals.html')
@@ -77,11 +74,8 @@ function clearLocalEventHandler() {
 }
 
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
-<<<<<<< HEAD
-=======
 clearLocalBtn.addEventListener('click', clearLocalEventHandler);
 
->>>>>>> 745f56d630e51bc720bc297ebbe1adbdbbeb9e56
 //this call is not being used right now but could. See earlier comment for details.
 displayList()
 
