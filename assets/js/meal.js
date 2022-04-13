@@ -10,7 +10,8 @@ var ingredients = JSON.parse(savedIng) || []
 function getSpoonData() {
     fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&apiKey=' + spoonKey)
         .then(function (response) {
-            return response.JSON
+            console.log(response)
+            return response.json()
         })
         .then(function (data) {
             console.log(data)
@@ -21,7 +22,7 @@ function getSpoonData() {
 function getEdamamData() {
     fetch('https://api.edamam.com/api/recipes/v2?q=' + ingredients.join(',') + '&app_id=' + + '&app_key=')
         .then(function (response) {
-            response.JSON
+            return response.json()
         })
         .then(function (data) {
             console.log(data)
