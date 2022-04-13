@@ -13,8 +13,8 @@ function displaySpoonRecipes(data) {
         var listItem = document.createElement('li')
         var imgItem = document.createElement('img')
         listItem.innerText = data[i].title
-        imgItem.setAttribute('src', data[i].image)
-        imgItem.setAttribute('class', "image-shrink")
+        // imgItem.setAttribute('src', data[i].image)
+        // imgItem.setAttribute('class', "image-shrink")
 
         recipes.appendChild(listItem)
         recipes.appendChild(imgItem)
@@ -61,5 +61,4 @@ function getEdamamData() {
 
 getSpoonData()
 getEdamamData()
-
 
