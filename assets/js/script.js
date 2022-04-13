@@ -60,8 +60,6 @@ function handleSubmit(ev) {
 }
 form.addEventListener('submit', handleSubmit);
 
-
-
 //this function moves browser to the Meals.HTML
 function redirectToMealsHTML() {
     location.assign('./meals.html')
@@ -74,6 +72,7 @@ function clearLocalEventHandler() {
 }
 
 makeMealBtn.addEventListener('click', redirectToMealsHTML);
+
 clearLocalBtn.addEventListener('click', clearLocalEventHandler);
 
 //this call is not being used right now but could. See earlier comment for details.
