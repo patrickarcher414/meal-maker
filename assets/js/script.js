@@ -19,7 +19,7 @@ function getSpoonData() {
 
 
 function getEdamamData() {
-    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + ) 
+    fetch ('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=' + spoonKey); 
         then(function(response) { 
             response.JSON
         })
