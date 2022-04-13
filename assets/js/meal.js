@@ -20,14 +20,8 @@ function displayRecipes(data) {
 // fetch requests to the API Spoonacular and Edamam
 // need to add a variable to the value of ingredients parameter that's equal to savedIng
 function getSpoonData() {
-<<<<<<< HEAD
     fetch ('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&number=' + maxRecipe + '&apiKey=' + spoonKey ) 
         .then(function(response) {
-=======
-    fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true&apiKey=' + spoonKey)
-        .then(function (response) {
-            console.log(response)
->>>>>>> b84a0e72a33e53570c28e49338c26d5b0e5b62cf
             return response.json()
         })
         .then(function (data) {
