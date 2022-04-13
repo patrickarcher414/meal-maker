@@ -6,9 +6,12 @@ var ingredients = JSON.parse(savedIng) || []
 // fetch requests to the API Spoonacular and Edamam
 // need to add a variable to the value of ingredients parameter that's equal to savedIng
 function getSpoonData() {
-    fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true')
+    fetch('https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + ingredients.join(',') + '&ranking=1&ignorePantry=true' + spoonKey)
         .then(function (response) {
-            response.JSON
+            console.log(response)
+            return response.JSON
+
+
         })
         .then(function (data) {
             console.log(data)
@@ -19,12 +22,12 @@ function getSpoonData() {
 function getEdamamData() {
     fetch('https://api.edamam.com/api/recipes/v2?q=' + + '&app_id=' + + '&app_key=')
         .then(function (response) {
-            response.JSON
+            return response.JSON
         })
         .then(function (data) {
             console.log(data)
         })
 }
 
-// getSpoonData()
-// getEdamamData()
+getSpoonData()
+// getEdamamData('sugar')
