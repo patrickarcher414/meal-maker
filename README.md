@@ -63,6 +63,6 @@ Edamam is the second recipe API used to generate additional recipes and diet inf
 ## Link
 Below is the link to the published page:
 
-https://patrickarcher414.github.io/project-one/
+https://patrickarcher414.github.io/meal-maker/
 
 
